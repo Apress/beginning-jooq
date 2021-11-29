@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.15.0.xsd">
+    <!-- Configure the database connection here -->
+    <jdbc>
+        <driver>com.mysql.cj.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost/edens_car</url>
+        <user>root</user>
+        <password>admin</password>
+    </jdbc>
+    <generator>
+        <name>org.jooq.codegen.JavaGenerator</name>
+        <database>
+            <name>org.jooq.meta.mysql.MySQLDatabase</name>
+            <inputSchema>edens_car</inputSchema>
+            <includeTables>true</includeTables>
+            <includeForeignKeys></includeForeignKeys>
+            <includes>.*</includes>
+            <syntheticPrimaryKeys>edens_car.complete_car_listing.vehicle_id</syntheticPrimaryKeys>
+            <recordVersionFields>edens_car\.*\.version</recordVersionFields>
+        </database>
+        <generate>
+            <jpaAnnotations>true</jpaAnnotations>
+            <serializablePojos>true</serializablePojos>
+            <jpaVersion>2.2</jpaVersion>
+            <springAnnotations>true</springAnnotations>
+            <javaTimeTypes>true</javaTimeTypes>
+            <daos>true</daos>
+            <javaBeansGettersAndSetters>true</javaBeansGettersAndSetters>
+            <pojos>true</pojos>
+            <pojosEqualsAndHashCode>true</pojosEqualsAndHashCode>
+            <pojosToString>true</pojosToString>
+        </generate>
+        <target>
+            <packageName>com.apress.jooq.generated</packageName>
+            <directory>\target\generated-sources\java</directory>
+            <clean>true</clean>
+            <encoding>UTF-8</encoding>
+        </target>
+    </generator>
+    <logging>DEBUG</logging>
+    <onError>LOG</onError>
+</configuration>
